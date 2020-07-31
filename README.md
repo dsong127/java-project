@@ -26,8 +26,8 @@ Features text file parsing/dumping, XML file parsing/dumping, pretty printing, a
 
 ## Android app screen shots
 
-[](imgs/1.png)
-[](imgs/2.png)
-[](imgs/3.png)
-[](imgs/4.png)
-[](imgs/5.png)
+<img src="https://github.com/dsong127/java-project/blob/master/imgs/1.png" width="450">
+<img src="https://github.com/dsong127/java-project/blob/master/imgs/2.png" width="450">
+<img src="https://github.com/dsong127/java-project/blob/master/imgs/3.png" width="450">
+<img src="https://github.com/dsong127/java-project/blob/master/imgs/4.png" width="450">
+<img src="https://github.com/dsong127/java-project/blob/master/imgs/5.png" width="450">
