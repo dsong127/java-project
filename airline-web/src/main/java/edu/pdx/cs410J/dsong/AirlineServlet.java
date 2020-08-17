@@ -17,16 +17,13 @@ import edu.pdx.cs410J.dsong.Airline;
 
 
 public class AirlineServlet extends HttpServlet {
-//  static final String WORD_PARAMETER = "word";
-//  static final String DEFINITION_PARAMETER = "definition";
 
   private final Map<String, String> dictionary = new HashMap<>();
   private Map<String, Airline> airlineMap = new HashMap<>();
 
   /**
-   * HTTP GET handler for returning all flights, and for flights traveling from
-   * source airport to destination airport for a given Airline
-   *
+   * HTTP GET handler for returning all flights, and for a specific Airline's flights
+   * traveling from source airport to destination airport.
    */
   @Override
   protected void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException
@@ -39,11 +36,11 @@ public class AirlineServlet extends HttpServlet {
 
     if (airlineName != null) {
       if (src != null && dest != null) {
-        // Search
-        // airline object to return - This does not get saved into the map
+        // Search flights traveling from specified source to specified destination.
+        // Airline object to return - This does not get saved into the map
         Airline dummyAirline = new Airline(airlineName);
-
         Airline airline = airlineMap.get(airlineName);
+        
         if (airline != null) {
           LinkedHashSet<Flight> allFlights = airline.getFlights();
 
@@ -129,9 +126,10 @@ public class AirlineServlet extends HttpServlet {
       newFlight = new Flight(flightNumber, src, depart, dest, arrive);
     } catch (IllegalArgumentException e) {
 //      response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
-      response.sendError(HttpServletResponse.SC_BAD_REQUEST, "bad flight arguments dude");
+      response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Bad flight arguments");
     }
 
+    // Writer class for dumping formatted string results to client
     PrintWriter pw = response.getWriter();
 
     // Update existing airline with new flight. Otherwise, create a new airline.
