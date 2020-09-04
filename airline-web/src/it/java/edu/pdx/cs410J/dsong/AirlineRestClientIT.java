@@ -68,6 +68,7 @@ public class AirlineRestClientIT {
     Airline airline = client.searchFlights(airlineName, src, dest);
     ArrayList<Flight> flights = airline.getSortedFlightsAsList();
     assertThat(airline.getName(), equalTo(airlineName));
+//    assertThat(flights.size(), equalTo(1)); // This passes in Intellij but not in mvn verify..
     assertThat(flights.size(), equalTo(2));
   }
 

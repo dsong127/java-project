@@ -93,5 +93,14 @@ public class Project5IT extends InvokeMainTestCase {
         assertThat(result.getTextWrittenToStandardError(), result.getExitCode(), equalTo(0));
 
     }
+//
+//    @Test
+//    public void test7fullOptionNoArgs() {
+//
+//        MainMethodResult result = invokeMain( Project5.class, "-host", "localhost", "-port", "8080", "-print");
+//        String out = result.getTextWrittenToStandardError();
+//        assertThat(out, out, containsString("No arguments given"));
+//
+//    }
 
 }
