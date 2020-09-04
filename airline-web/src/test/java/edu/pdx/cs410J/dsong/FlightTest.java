@@ -83,12 +83,6 @@ public class FlightTest {
   }
 
   @Test()
-  public void testGetDeparture() {
-    Flight flight = new Flight("10","pdx", "8/1/2020 10:10 AM", "lax", "11/11/2020 11:14 AM");
-//    assertThat(flight.getDeparture().toString(), equalTo("Sat Aug 01 10:10:00 PDT 2020"));
-  }
-
-  @Test()
   public void testGetArrival() {
     Flight flight = new Flight("10","pdx", "8/1/2020 10:10 AM", "lax", "11/11/2020 11:14 AM");
     assertThat(flight.getArrival().toString(), equalTo("Wed Nov 11 11:14:00 PST 2020"));

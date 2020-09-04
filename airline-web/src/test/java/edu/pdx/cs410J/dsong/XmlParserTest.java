@@ -59,26 +59,14 @@ public class XmlParserTest {
     assertEquals(airline.getName(), expectedAirline.getName());
   }
 
-//  @Test(expected = ParserException.class)
-//  public void cantParseInvalidXmlFile() throws ParserConfigurationException, IOException, SAXException, ParserException {
-//    AirlineXmlHelper helper = new AirlineXmlHelper();
-//
-//    var name = "Valid Airlines";
-//
-////    var parser = new XmlParser(this.getClass().getResource("invalid-airline.xml").getPath(), name, true);
-////    parser.parse();
-//
-//  }
-//
-//  @Test(expected = ParserException.class)
-//  public void mismatchingAirlineName() throws ParserConfigurationException, IOException, SAXException, ParserException {
-//    AirlineXmlHelper helper = new AirlineXmlHelper();
-//
-//    var name = "bleh Airlines";
-//
-////    var parser = new XmlParser(this.getClass().getResource("invalid-airline.xml").getPath(), name, true);
-////    parser.parse();
-//
-//  }
+ @Test(expected = ParserException.class)
+ public void cantParseInvalidXmlFile() throws ParserConfigurationException, IOException, SAXException, ParserException {
+   AirlineXmlHelper helper = new AirlineXmlHelper();
 
+   var name = "Valid Airlines";
+
+   var parser = new XmlParser(this.getClass().getResource("invalid-airline.xml").getPath(), name, true);
+   parser.parse();
+
+ }
 }
